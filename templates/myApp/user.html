@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Bikeshare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- App css -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/theme.min.css' %}" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <!-- LOGO -->
+                <div class="navbar-brand-box d-flex align-items-left">
+                    <a href="//127.0.0.1:8000/" class="logo">
+                        <span>
+                            <img src="{% static '' %}images/logo-light.png" alt="" height="18">
+                        </span>
+                    </a>
+
+                    <button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect waves-light" id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="dropdown d-inline-block ml-2">
+                        <button type="button" class="btn header-item waves-effect waves-light" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="{% static 'images/users/avatar-1.jpg' %}"
+                                alt="User-pic">
+                            <span class="d-none d-sm-inline-block ml-1" id="username">{{username}}</span>
+                            <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                Settings
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Menu</li>
+
+                        <li>
+                            <a href="//127.0.0.1:8000/user/" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="//127.0.0.1:8000/userSetting/" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Setting</span></a>
+                        </li>
+                        <li>
+                            <a href="//127.0.0.1:8000/adminManager/" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Statistics</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Contact Us</span></a>
+                        </li>
+                        
+
+
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0 font-size-18">Dashboard</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">BIKESHARE</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>     
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-md-4">
+                                    <div class="card card-pricing">
+                                        <div class="card-body">
+                                            <form action="#" method="post" class="customer">
+                                            <div class="form-group">
+                                       <label id="balance" name="balance"> Your account: £ {{balance}}</label>
+                                            <input type="number" id="topup" name="topup" class="form-control" placeholder="Enter the amount you want top up">
+                                        </div>
+
+                                           <button type="button" id="top_button" class="btn btn-primary waves-effect waves-light">Top up</button>
+                                            </form>
+ 										<p></p>
+                                        </div>
+                                    </div> <!-- end Pricing_card -->
+                                </div>
+                       <div class="col-lg-4">
+                            <div class="card">
+                                   <div class="card-body">
+                                        <div class="form-group">
+                                        <label>Select a bike</label>
+										<form action="#" method="post">
+                                            <input type="text" id="selectbike" name="selectbike" class="form-control" placeholder="Enter the bike you want rent">
+										<p></p>
+                                          <button type="button" class="btn btn-primary waves-effect waves-light" id="selectbike_button">Submit</button>
+                                          </form>
+                                    </div>
+
+                                        </div>
+
+                                </div>
+                            </div>
+
+                             <div class="col-lg-4">
+                            <div class="card">
+                                   <div class="card-body">
+                                         <div class="form-group">
+                                        <label>Report the broken bike</label>
+										<form action="#" method="post">
+                                            <input type="text" id="brokenbike" name="brokenbike" class="form-control" placeholder="Enter the broken bike you want notify">
+                                         <p></p>
+                                          <button type="button" class="btn btn-primary waves-effect waves-light" id="brokenbike_button">Submit</button>
+                                          </form>
+                                        </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <!-- end row-->
+
+                    <div class="row">
+                    <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-body">
+                    			<div class="form-group">
+                                   <label>Account Statement</label>
+                                   <form action="#" method="post">
+                                   <p></p>
+                                   <p class="card-subtitle mb-4 font-size-13" >You are using:</p>
+                                       <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="selectbikeid" name="selectbikeid" value="{{selectbikeid}}"/>
+                                       </div>
+                                   <p class="card-subtitle mb-4 font-size-13" >The rent time is:</p>
+                                       <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="renttime" name="renttime" value="{{renttime}}"/>
+                                       </div>
+
+									</form>
+
+
+                   				 </div>
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
+                        </div>
+
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                   <div class="card-body">
+                                        <div class="form-group">
+                                        <label>Return a bike</label>
+										<form action="#" method="post">
+                                            <input type="text" id="returnbike" name="returnbike" class="form-control" placeholder="Enter the bike you want return">
+										<p></p>
+                                          <button type="button" class="btn btn-primary waves-effect waves-light" id="return_button">Return</button>
+                                        </form>
+                                    </div>
+
+                                        </div>
+
+                                </div>
+                            </div>
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                   <div class="card-body">
+                                        <div class="form-group">
+                                        <label>Payment</label>
+										<form action="#" method="post">
+                                       <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="cost" name="cost" value="{{cost}}"/>
+                                       </div>
+                                    <button type="button" class="btn btn-primary waves-effect waves-light" id="pay_button" name="pay_button">Pay</button>
+                                          </form>
+                                    </div>
+
+                                        </div>
+
+                                </div>
+                            </div>
+
+                     <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-body">
+                                <label>Map</label>
+                                 <div id="map" class="carousel slide">
+                                        <div class="carousel-inner" >
+                                            <div class="carousel-item active">
+                                                <img class="d-block img-fluid" src="{% static 'images/map.jpeg' %}" alt="Map">
+                                            </div>
+                                        </div>
+                                 </div>
+
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
+                        </div>
+
+
+                    </div>
+                    
+
+                    <div class="row">
+ 
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                           BIKESHARE
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-right d-none d-sm-block">
+                                Design & Develop by Group 2N 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Overlay-->
+    <div class="menu-overlay"></div>
+
+
+    <!-- jQuery  -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/metismenu.min.js' %}"></script>
+    <script src="{% static 'js/waves.js' %}"></script>
+    <script src="{% static 'js/simplebar.min.js' %}"></script>
+
+
+    <!-- App js -->
+    <script src="{% static 'js/theme.js' %}"></script>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var urlMsg = parseUrl(window.location.search);
+            $.ajax({
+                url:"http://127.0.0.1:8000/user?username="+urlMsg.username + '&balance='+urlMsg.balance,
+                method: 'get'
+            })
+
+            $("#username").val(GetQueryString("username"))
+
+            $("#balance").val(GetQueryString("balance"))
+
+            $("#top_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/customer/",
+                type: "POST",
+                data:{
+                    'username': $('#username').val(),
+                    'balance': $('#balance').val(),
+                    'topup': $('#topup').val(),
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '200') {
+                            var $val
+                            alert("Top up successfully! ")
+                            window.location.href = "http://127.0.0.1:8000/user?username="+data.username + '&balance='+data.balance
+                            {#$("#username").html(data.username);#}
+                            {#$("#balance").html(data.balance);#}
+                            return true
+                        }
+                }
+            })
+            })
+
+            $("#selectbike_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/selectbike/",
+                type: "POST",
+                data:{
+                    'username': $('#username').val(),
+                    'balance': $('#balance').val(),
+                    'selectbike': $('#selectbike').val(),
+                    'renttime': $('#renttime').val(),
+                    'cost': $('#cost').val()
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '201') {
+                            alert("Rent successfully!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="+data.username + '&balance='+data.balance + '&selectbikeid='+data.selectbike + '&renttime='+data.renttime
+                            return true
+                        }
+                        if(data.success == '202'){
+                            alert("Rent failly!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="+data.username + '&balance='+data.balance
+                            return false
+                        }
+                }
+            })
+            })
+
+        $("#brokenbike_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/brokenbike/",
+                type: "POST",
+                data:{
+                    'username': $('#username').val(),
+                    'balance': $('#balance').val(),
+                    'brokenbike': $('#brokenbike').val()
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '203') {
+                            alert("Notify successfully!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="+data.username + '&balance='+data.balance
+                            return true
+                        }
+                        if(data.success == '204'){
+                            alert("Notify failly!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="+data.username + '&balance='+data.balance
+                            return false
+                        }
+                }
+            })
+            })
+
+        $("#return_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/returnbike/",
+                type: "POST",
+                data:{
+                    'username': $('#username').val(),
+                    'balance': $('#balance').val(),
+                    'selectbikeid': $('#selectbikeid').val(),
+                    'returnbike': $('#returnbike').val(),
+                    'renttime': $('#renttime').val(),
+                    'cost':$('#cost').val()
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '205') {
+                            alert("Return successfully!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="
+                                +data.username + '&balance='+data.balance + '&selectbikeid='+data.selectbikeid + '&renttime='+data.renttime + '&cost='+data.cost
+                            return true
+                        }
+                        if(data.success == '206'){
+                            alert("Return failly!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="
+                                +data.username + '&balance='+data.balance
+                            return false
+                        }
+                }
+            })
+            })
+
+            $("#pay_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/pay/",
+                type: "POST",
+                data:{
+                    'username': $('#username').val(),
+                    'balance': $('#balance').val(),
+                    'cost':$('#cost').val()
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '207') {
+                            alert("Pay successfully!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="
+                                +data.username + '&balance='+data.balance
+                            return true
+                        }
+                        if(data.success == '208'){
+                            alert("Pay failly!")
+                            window.location.href = "http://127.0.0.1:8000/user?username="
+                                +data.username + '&balance='+data.balance
+                            return false
+                        }
+                }
+            })
+            })
+
+
+            $.ajax({
+               url : "http://127.0.0.1:8000/user/",
+               dataType : "json",
+               type : "POST",
+               data : {
+                   "username" : username,
+                   "balance" : balance
+               },
+               success : function(data) {
+                   window.location.href = "http://127.0.0.1:8000/user/"
+               }
+           })
+        });
+
+       function GetQueryString(name) {
+           var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+           var r = window.location.search.substr(1).match(reg);
+           if (r != null)
+               return decodeURI(r[2]);
+           return null;
+       }
+
+
+        function parseUrl(url) {
+            if (url.indexOf("?") == -1) {
+                return {};
+            }
+            var query = url.split("?")[1];
+            var queryArr = query.split("&");
+            var obj = {};
+            queryArr.forEach(function (item) {
+                var key = item.split("=")[0];
+                var value = item.split("=")[1];
+                obj[key] = decodeURIComponent(value);
+            });
+            return obj;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

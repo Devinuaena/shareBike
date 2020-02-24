@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Bikeshare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    
+    <!-- Database css -->
+    
+     <link href="{% static 'css/dataTables.bootstrap4.css" rel="stylesheet' %}" type="text/css" />
+     <link href="{% static 'css/responsive.bootstrap4.css' %}" rel="stylesheet" type="text/css" />
+     <link href="{% static 'css/buttons.bootstrap4.css' %}" rel="stylesheet" type="text/css" />
+     <link href="{% static 'css/select.bootstrap4.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/theme.min.css' %}" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+                <header id="page-topbar">
+            <div class="navbar-header">
+                <!-- LOGO -->
+                <div class="navbar-brand-box d-flex align-items-left">
+                    <a href="index.html" class="logo">
+                        <span>
+                            <img src="{% static 'images/logo-light.png' %}" alt="" height="18">
+                        </span>
+                    </a>
+
+                    <button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect waves-light" id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="dropdown d-inline-block ml-2">
+                        <button type="button" class="btn header-item waves-effect waves-light" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="{% static 'images/users/avatar-1.jpg' %}"
+                                alt="User-pic">
+                            <span class="d-none d-sm-inline-block ml-1">{{username}}</span>
+                            <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                Settings
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+                <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Menu</li>
+
+                        <li>
+                            <a href="//127.0.0.1:8000/user/" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="//127.0.0.1:8000/userSetting/" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Setting</span></a>
+                        </li>
+                        <li>
+                            <a href="//127.0.0.1:8000/adminManager/" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Statistics</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Setting</span></a>
+                        </li>
+                        
+
+
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0 font-size-18">Dashboard</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Delexa</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>     
+                    <!-- end page title -->
+
+                    <!-- end row-->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                   
+                                    <h4 class="card-title d-inline-block">Bike Daily Used</h4>
+                                    
+                                    <!-- Left chart-->
+                                     <div id="chart1" class="carousel slide">
+                                        <div class="carousel-inner" >
+                                            <div class="carousel-item active">
+                                                <img class="d-block img-fluid" src="{% static 'images/chart1.png' %}" alt="Map">
+                                            </div>
+                                        </div>
+                                    </div>
+									<!-- Left chart end-->
+
+                                    <div class="row text-center mt-4">
+                                        <div class="col-6">
+                                            <h4 id=total-uesed>100</h4>
+                                            <p class="text-muted mb-0">Total Used</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <h4 id="using-now">3</h4>
+                                            <p class="text-muted mb-0">Using now</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                   
+                                    <h4 class="card-title d-inline-block">Profit per week</h4>
+                                    
+                                    <!-- Left chart-->
+                                    <div id="chart4" class="carousel slide">
+                                        <div class="carousel-inner" >
+                                            <div class="carousel-item active">
+                                                <img class="d-block img-fluid" src="{% static 'images/chart4.png' %}" alt="Map">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Left chart-->
+
+                                    <div class="row text-center mt-4">
+                                        <div class="col-12">
+                                            <h4 id="total-revenue">£1875.54</h4>
+                                            <p class="text-muted mb-0">Total Revenue</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                        
+                  <!--user table-->
+                  
+					<div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">User Info</h4>
+                                    <table id="" class="table dt-responsive nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Phone</th>
+                                                <th>Password</th>
+                                                <th>Action</th>
+                                                
+                                                
+                                            </tr>
+                                        </thead>
+                                    
+                                    
+                                        <tbody>
+                                           
+                                            
+                                        </tbody>
+                                    </table>
+
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div><!--end row-->
+                        
+                    
+
+                    
+
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                           BIKESHARE
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-right d-none d-sm-block">
+                                Design & Develop by Group 2N 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Overlay-->
+    <div class="menu-overlay"></div>
+
+
+    <!-- jQuery  -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/metismenu.min.js' %}"></script>
+    <script src="{% static 'js/waves.js' %}"></script>
+    <script src="{% static 'js/simplebar.min.js' %}"></script>
+    
+            <!-- third party js -->
+        <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'js/dataTables.bootstrap4.js' %}"></script>
+        <script src="{% static 'js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'js/responsive.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'js/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'js/buttons.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'js/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'js/buttons.flash.min.js' %}"></script>
+        <script src="{% static 'js/buttons.print.min.js' %}"></script>
+        <script src="{% static 'js/dataTables.keyTable.min.js' %}"></script>
+        <script src="{% static 'js/dataTables.select.min.js' %}"></script>
+        <script src="{% static 'js/pdfmake.min.js' %}"></script>
+        <script src="{% static 'js/vfs_fonts.js' %}"></script>
+        <!-- third party js ends -->
+
+
+    <!-- App js -->
+    <script src="{% static 'js/theme.js' %}"></script>
+    </div>
+
+</body>
+
+</html>

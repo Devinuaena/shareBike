@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Bikeshare-Join the movement</title>
+    <meta name="keywords" content="Bikeshare-Join the movement" />
+    <meta name="description" content="Bikeshare is a bike share system" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap2.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_da66be12.css' %}"/>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="navbar navbar-fixed-top" id="top">
+        <div class="container">
+            <div class="navbar-logo">
+              <a href="/" class="navbar-brand">bikeshare</a>
+            </div>
+            <nav id="mainnav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a target="_blank" class="btn btn-getstart"  href="//127.0.0.1:8000/login/" onClick="_hmt.push(['_trackEvent', 'top-navbar-getstart', 'click', 'pc']);">Login</a></li>
+                    <li><a target="_blank" href="//127.0.0.1:8000/register/" onClick="_hmt.push(['_trackEvent', 'top-navbar', 'click', 'bbs']);">Register</a></li>
+                </ul>
+            </nav>
+
+			<!--bootstrap-----model-->
+{#          <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">#}
+{#            <div class="modal-dialog">#}
+{#		<div class="modal-content">#}
+{#			<!--loginbox head-->#}
+{#			<div class="modal-header">#}
+{#				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">#}
+{#                    ×#}
+{#                </button>#}
+{#				<h4 class="modal-title" id="myModalLabel">#}
+{#					Welcome!#}
+{#				</h4>#}
+{#			</div>#}
+{#			<!--登陆框中间部分(from表单)-->#}
+{#			<div class="modal-body">#}
+{#				<form class="form-horizontal" role="form">#}
+{#					<!--username-->#}
+{#					<div class="form-group">#}
+{#						<label for="username" class="col-sm-2 control-label">Username</label>#}
+{#						<div class="col-sm-10">#}
+{#							<input type="text" class="form-control" id="username" placeholder="username" required="required">#}
+{#						</div>#}
+{#					</div>#}
+{#					<!--psw-->#}
+{#					<div class="form-group">#}
+{#						<label for="password" class="col-sm-2 control-label" >Password</label>#}
+{#						<div class="col-sm-10">#}
+{#							<input type="password" class="form-control" id="password" placeholder="password" required="required">#}
+{#						</div>#}
+{#					</div>#}
+{#					<!--remeber psw-->#}
+{#					<div class="form-group">#}
+{#						<div class="col-sm-offset-2 col-sm-10">#}
+{#							<div class="checkbox">#}
+{#								<label>#}
+{#									<input type="checkbox"> Remeber password#}
+{#								</label>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#					<!--login button-->#}
+{#					<div class="form-group">#}
+{#						<div class="col-sm-offset-2 col-sm-10">#}
+{#						<button type="submit" class="btn btn-default">Login</button>#}
+{#						</div>#}
+{#					</div>#}
+{#				</form>#}
+{#		    </div>	#}
+{#	    </div>#}
+{##}
+{##}
+{#            #}
+{#            </div>#}
+{#            </div>#}
+
+        </div>
+    </header>
+
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="active item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="carousel-content">
+            <p class="name">JOIN THE MOVEMENT</p>
+            <p class="slogan">Share The Bike<br/>Share The Life</p>
+		                <p class="download">
+                <a target="_blank" href="#" class="btn btn-getstart-big">GET YOUR BIKE</a>
+            </p>
+		            </div>
+        <div class="carousel-wave"></div>
+        <div class="carousel-wave2"></div>
+    </div>
+
+    <div class="container marketing">
+
+        <div class="row featurette">
+            <div class="col-md-5 col-md-offset-1">
+                <h2 class="featurette-heading">How it works.</h2>
+                <p class="lead">1. Sign up/Register
+                2. Rent bike by selecting the ID of bike
+                3. Return bike
+                4. Pay </p>
+            </div>
+        </div>
+    </div>
+        <div class="container marketing">
+
+            <div class="row featurette">
+            <div class="col-md-5 col-md-offset-1">
+                <h2 class="featurette-heading">Product Advantages</h2>
+                <p class="lead">Easy to use. Lower price. Easy to track.</p>
+            </div>
+        </div>
+    </div>
+
+        </div>
+
+        <div class="container marketing">
+
+            <div class="row featurette">
+            <div class="col-md-1 col-md-offset-1">
+                <h2 class="featurette-heading">Prices
+                  <div class="col-md-3 col-md-offset-1">
+                    <p>
+
+                    </p>
+
+               </div>
+            </div>
+        </div>
+    </div>
+
+ <div class="row justify-content-center">
+                        <div class="col-xl-10">
+
+                            <!-- Plans -->
+                            <div class="row mt-sm-5 mt-3 mb-3">
+                                <div class="col-md-4">
+                                    <div class="card card-pricing">
+                                        <div class="card-body text-center">
+<h5 class="font-weight-bold mt-4 text-uppercase">Pay As You Ride</h5>
+
+                                            <ul class="card-pricing-features">
+                                                <li>Annual Cost - £0</li>
+                                                <li>First 30 minutes - £1</li>
+                                                <li>Additional 30 minutes - £1</li>
+                                                <li>Maximum Charge per day - £10 (24h)</li>
+                                            </ul>
+
+                                            <h2 class="mt-4">£1 /30 min</h2>
+                                            <button class="btn btn-primary mt-4 mb-2 btn-rounded waves-effect waves-light">Get Started <i class="mdi mdi-arrow-right ml-1"></i></button>
+                                        </div>
+                                    </div> <!-- end Pricing_card -->
+                                </div> <!-- end col -->
+
+                                <div class="col-md-4">
+                                    <div class="card card-pricing">
+                                        <div class="card-body text-center">
+<h5 class="font-weight-bold mt-4 text-uppercase text-success">Monthly</h5>
+                                            <ul class="card-pricing-features">
+                                                <li>Monthly Price -£10</li>
+                                                <li>First 30 minutes - £0</li>
+                                                <li>Additional 30 minutes - £1</li>
+                                                <li>Maximum Charge per day - £5 (24h)</li>
+                                            </ul>
+
+                                            <h2 class="mt-4">£0 /First 30 min</h2>
+                                            <button class="btn btn-primary mt-4 mb-2 btn-rounded waves-effect waves-light">Get Started <i class="mdi mdi-arrow-right ml-1"></i></button>
+                                        </div>
+                                    </div> <!-- end Pricing_card -->
+                                </div> <!-- end col -->
+
+                                <div class="col-md-4">
+                                    <div class="card card-pricing">
+                                        <div class="card-body text-center">
+<h5 class="font-weight-bold mt-4 text-uppercase">Annual</h5>
+                                            <ul class="card-pricing-features">
+                                                <li>Monthly Price -£5</li>
+                                                <li>First 30 minutes - £0</li>
+                                                <li>Additional 30 minutes - 50p</li>
+                                                <li>Maximum Charge per day - £5 (24h)</li>
+                                            </ul>
+
+                                             <h2 class="mt-4">£0 /First 30 min</h2>
+                                            <button class="btn btn-primary mt-4 mb-2 btn-rounded waves-effect waves-light">Get Started <i class="mdi mdi-arrow-right ml-1"></i></button>
+                                        </div>
+                                    </div> <!-- end Pricing_card -->
+                                </div> <!-- end col -->
+
+                            </div>
+                            <!-- end row -->
+
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
+
+
+
+
+
+
+
+
+        <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="footer-link">
+                        <span><a href="#">Facebook</a></span> | 
+                        <span><a href="#">Twitter</a></span> | 
+                        <span><a href="#">Contact us</a></span>
+                    </p>
+                </div>
+                <div class="col-md-6 text-right">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="gotop"><span class="qrcode"></span><a class="anchor" href="javascript:void(0);"></a></div>
+
+    <script src="{% static 'js/modernizr2.min.js' %}"></script>
+    <script src="{% static 'js/jquery2.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap2.min.js' %}"></script>
+    <script src="{% static 'js/jquery2.scrollto.min.js' %}"></script>
+    <script src="{% static 'js/index_ef441bd2.js' %}"></script>
+    </div>
+</body>
+</html>

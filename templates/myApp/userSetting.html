@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Bikeshare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    <!-- App css -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/theme.min.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+
+<!-- Begin page -->
+<div id="layout-wrapper">
+
+    <header id="page-topbar">
+        <div class="navbar-header">
+            <!-- LOGO -->
+            <div class="navbar-brand-box d-flex align-items-left">
+                <a href="index.html" class="logo">
+                        <span>
+                            <img src="images/logo-light.png" alt="" height="18">
+                        </span>
+                </a>
+
+                <button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect waves-light" id="vertical-menu-btn">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <div class="dropdown d-inline-block ml-2">
+                    <button type="button" class="btn header-item waves-effect waves-light" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle header-profile-user" src="{% static 'images/users/avatar-1.jpg' %}"
+                             alt="User-pic">
+                        <span class="d-none d-sm-inline-block ml-1">{{username}}</span>
+                        <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+
+                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                            Settings
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                            <span>Log Out</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="vertical-menu">
+
+        <div data-simplebar class="h-100">
+
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+                <!-- Left Menu Start -->
+                <ul class="metismenu list-unstyled" id="side-menu">
+                    <li class="menu-title">Menu</li>
+
+                    <li>
+                            <a href="//127.0.0.1:8000/user/" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="//127.0.0.1:8000/userSetting/" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Setting</span></a>
+                        </li>
+                        <li>
+                            <a href="//127.0.0.1:8000/adminManager/" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Statistics</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class=" waves-effect"><i class="mdi mdi-calendar"></i><span>Setting</span></a>
+                        </li>
+                </ul>
+            </div>
+            <!-- Sidebar -->
+        </div>
+    </div>
+    <!-- Left Sidebar End -->
+
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between">
+                            <h4 class="mb-0 font-size-18">Dashboard</h4>
+
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">BIKESHARE</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="card-title d-inline-block">Track Bike</h4>
+
+                                <!-- Left chart-->
+                                <form action="#" method="post">
+                                    <input type="text" id="bikelocationid" name="bikelocationid" class="form-control" placeholder="Enter the bike you want track">
+                                    <p></p>
+                                    <button type="button" class="btn btn-primary waves-effect waves-light" id="track_button">Track</button>
+                                </form>
+                                <!-- Left chart end-->
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="card-title d-inline-block">Fixed Bike</h4>
+
+                                <!-- Left chart-->
+                                <form action="#" method="post">
+                                    <input type="text" id="fixbikeid" name="fixbikeid" class="form-control" placeholder="Enter the bike you fixed">
+                                    <p></p>
+                                    <button type="button" class="btn btn-primary waves-effect waves-light" id="fix_button">Fixed</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="card-title d-inline-block">Change Bike Location</h4>
+
+                                <!-- Left chart-->
+                                <form action="#" method="post">
+                                    <input type="text" id="changelocation" name="changelocation" class="form-control" placeholder="Enter the location you want change">
+                                    <p></p>
+                                    <button type="button" class="btn btn-primary waves-effect waves-light" id="changelocation_button">Change</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-body">
+                    			<div class="form-group">
+                                   <label>Bike Statement</label>
+                                   <form action="#" method="post">
+                                   <p></p>
+                                   <p class="card-subtitle mb-4 font-size-13" >Bike ID:</p>
+                                       <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="bbikeid" name="bbikeid" value="{{bbikeid}}"/>
+                                       </div>
+                                   <p class="card-subtitle mb-4 font-size-13" >Bike Location:</p>
+                                       <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="bikelocation" name="bikelocation" value="{{bikelocation}}"/>
+                                       </div>
+                                   <p class="card-subtitle mb-4 font-size-13" >Bike Statement:</p>
+                                       <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="bikestatement" name="bikestatement" value="{{bikestatement}}"/>
+                                       </div>
+
+									</form>
+
+
+                   				 </div>
+                                </div> <!-- end card-body-->
+                            </div> <!-- end card-->
+                        </div>
+
+                <!-- end main content-->
+            </div>
+            <!-- END layout-wrapper -->
+
+            <!-- Overlay-->
+            <div class="menu-overlay"></div>
+
+
+            <!-- jQuery  -->
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+            <script src="{% static 'js/metismenu.min.js' %}"></script>
+            <script src="{% static 'js/waves.js' %}"></script>
+            <script src="{% static 'js/simplebar.min.js' %}"></script>
+
+
+            <!-- App js -->
+            <script src="{% static 'js/theme.js' %}"></script>
+        </div>
+        <script>
+            $(document).ready(function(){
+            $("#track_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/trackbike/",
+                type: "POST",
+                data:{
+                    {#'username': $('#username').val(),#}
+                    'bbikeid':$('#bbikeid').val(),
+                    'bikelocationid': $('#bikelocationid').val(),
+                    'bikestatement': $('#bikestatement').val()
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '209') {
+                            alert("Track successfully, Available bike!")
+                            window.location.href = "http://127.0.0.1:8000/userSetting?bbikeid="+data.bbikeid +'&bikelocation=' + data.bikelocation + '&bikestatement=' + data.bikestatement
+                            return true
+                        }
+                        if (data.success == '210') {
+                            alert("Track successfully, Boken bike!")
+                            window.location.href = "http://127.0.0.1:8000/userSetting?bbikeid="+data.bbikeid +'&bikelocation=' + data.bikelocation + '&bikestatement=' + data.bikestatement
+                            return true
+                        }
+                        if (data.success == '211') {
+                            alert("Track failly!")
+                            window.location.href = "http://127.0.0.1:8000/userSetting?bbikeid="+data.bbikeid +'&bikelocation=' + data.bikelocation + '&bikestatement=' + data.bikestatement
+                            return true
+                        }
+                }
+            })
+            })
+
+            $("#fix_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/fixbike/",
+                type: "POST",
+                data:{
+                    'bbikeid':$('#bbikeid').val(),
+                    'fixbikeid': $('#fixbikeid').val(),
+                    'bikestatement': $('#bikestatement').val()
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '212') {
+                            alert("Fix successfully!")
+                            window.location.href = "http://127.0.0.1:8000/userSetting?bbikeid="+data.bbikeid +'&bikelocation=' + data.bikelocation + '&bikestatement=' + data.bikestatement
+                            return true
+                        }
+                        if (data.success == '213') {
+                            alert("Fix failly!")
+                            window.location.href = "http://127.0.0.1:8000/userSetting?bbikeid="+data.bbikeid +'&bikelocation=' + data.bikelocation + '&bikestatement=' + data.bikestatement
+                            return true
+                        }
+                }
+            })
+            })
+
+            $("#changelocation_button").click(function () {
+                $.ajax({
+                url: "http://127.0.0.1:8000/changelocation/",
+                type: "POST",
+                data:{
+                    'bbikeid':$('#bbikeid').val(),
+                    'changelocation': $('#changelocation').val(),
+                    'bikestatement': $('#bikestatement').val()
+                },
+                dataType: "JSON",
+                async: true,
+                success: function (data) {
+                        if (data.success == '212') {
+                            alert("Change "+ data.bbikeid +" location successfully!")
+                            window.location.href = "http://127.0.0.1:8000/userSetting?bbikeid="+data.bbikeid +'&bikelocation=' + data.bikelocation + '&bikestatement=' + data.bikestatement
+                            return true
+                        }
+                        if (data.success == '213') {
+                            alert("Change "+ data.bbikeid +" location failly!")
+                            window.location.href = "http://127.0.0.1:8000/userSetting?bbikeid="+data.bbikeid +'&bikelocation=' + data.bikelocation + '&bikestatement=' + data.bikestatement
+                            return true
+                        }
+                }
+            })
+            })
+
+        });
+        </script>
+    </div>
+</div>
+</body>
+</html>
